@@ -9,7 +9,7 @@ private:
 	std::vector<Shelf> shelves = std::vector<Shelf>();
 
 public:
-	bool addShelf(std::string name);
+	void addShelf(std::string name);
 	void removeShelf(Shelf& shelf);
-	std::vector<Shelf> getShelves();
+	std::vector<Shelf>& getShelves();
 };

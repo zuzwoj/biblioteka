@@ -5,17 +5,20 @@
 #include "imgui_impl_opengl3.h"
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include "guiRenderer.h"
 
 class Application
 {
 private:
-	const int WINDOW_WIDTH = 1425;
-	const int WINDOW_HEIGHT = 900;
 	const char* FONT_PATH = "C:/Windows/Fonts/courbd.ttf";
-	const float FONT_SIZE = 14.0f;
+	const float FONT_SIZE = 18.0f;
 
 	GLFWwindow* window;
 	ImGuiIO* io = nullptr;
+	GuiRenderer* guiRenderer;
+	Library* library;
+
+	void initializeDummyLibrary();
 
 public:
 	bool initialize();

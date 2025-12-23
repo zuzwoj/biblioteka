@@ -9,13 +9,14 @@ struct BookData
 	std::string note;
 
 	BookData(std::string title, std::string author, unsigned int year, std::string note);
+	BookData();
 };
 
 class Book
 {
-private:
+public:
 	BookData bookData;
 
-public:
 	Book(BookData bookData);
+	Book();
 };

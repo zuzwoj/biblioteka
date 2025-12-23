@@ -1,8 +1,8 @@
 #include "library.h"
 
-bool Library::addShelf(std::string name)
+void Library::addShelf(std::string name)
 {
-	return true;
+	shelves.push_back(Shelf(name));
 }
 
 void Library::removeShelf(Shelf& shelf)
@@ -10,7 +10,7 @@ void Library::removeShelf(Shelf& shelf)
 
 }
 
-std::vector<Shelf> Library::getShelves()
+std::vector<Shelf>& Library::getShelves()
 {
 	return shelves;
 }
