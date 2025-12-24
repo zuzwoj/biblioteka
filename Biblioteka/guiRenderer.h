@@ -7,7 +7,7 @@
 
 enum GuiMode
 {
-	SHELVES, BOOKS, BOOK_DETAILS
+	LIBRARY, SHELF, BOOK
 };
 
 class GuiRenderer
@@ -16,18 +16,18 @@ private:
 	const float DUMMY_HEIGHT = 3.0f;
 
 	ImVec2 position = ImVec2(0, 0);
-	GuiMode currentMode = GuiMode::SHELVES;
+	GuiMode currentMode = GuiMode::LIBRARY;
 
 	Library& library;
-	Shelf dummyShelf = Shelf();
-	Shelf& selectedShelf;
-	Book dummyBook = Book();
-	Book& selectedBook;
+	Shelf* selectedShelf = nullptr;
+	Book* selectedBook = nullptr;
 
 	void renderSeparator();
+	void renderHeaderSeparator();
+
 	void renderShelves();
-	void renderBooks(Shelf& shelf);
-	void renderBook(Book& book);
+	void renderBooks(Shelf* shelf);
+	void renderBook(Book* book);
 
 public:
 	GuiRenderer(Library& library);
