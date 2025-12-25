@@ -17,3 +17,10 @@ void ConfirmationPopup::renderContent()
         ImGui::CloseCurrentPopup();
     }
 }
+
+bool ConfirmationPopup::confirmed() 
+{ 
+    bool oldValue = result;
+    result = false;
+    return oldValue; 
+}

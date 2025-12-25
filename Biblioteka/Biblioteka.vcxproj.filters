@@ -28,21 +28,15 @@
     <Filter Include="Pliki źródłowe\gui\popup">
       <UniqueIdentifier>{5b2c6b61-fb30-46c5-85af-725a4c4e2c51}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\model">
+      <UniqueIdentifier>{56309f98-59d3-4362-b201-5364d33bad38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\model">
+      <UniqueIdentifier>{af5f4b77-51b3-41a0-86cd-347f35409561}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="library.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="shelf.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="book.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="bookData.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\imgui\imgui.cpp">
@@ -102,14 +96,23 @@
     <ClCompile Include="searchScreen.cpp">
       <Filter>Pliki źródłowe\gui\screen</Filter>
     </ClCompile>
+    <ClCompile Include="fileManager.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="book.cpp">
+      <Filter>Pliki źródłowe\model</Filter>
+    </ClCompile>
+    <ClCompile Include="bookData.cpp">
+      <Filter>Pliki źródłowe\model</Filter>
+    </ClCompile>
+    <ClCompile Include="library.cpp">
+      <Filter>Pliki źródłowe\model</Filter>
+    </ClCompile>
+    <ClCompile Include="shelf.cpp">
+      <Filter>Pliki źródłowe\model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="library.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="shelf.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="application.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
@@ -122,17 +125,20 @@
     <ClInclude Include="guiUtils.h">
       <Filter>Pliki nagłówkowe\gui</Filter>
     </ClInclude>
-    <ClInclude Include="book.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="popup.h">
       <Filter>Pliki nagłówkowe\gui</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="fileManager.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="resource1.h">
-      <Filter>Pliki nagłówkowe</Filter>
+    <ClInclude Include="book.h">
+      <Filter>Pliki nagłówkowe\model</Filter>
+    </ClInclude>
+    <ClInclude Include="library.h">
+      <Filter>Pliki nagłówkowe\model</Filter>
+    </ClInclude>
+    <ClInclude Include="shelf.h">
+      <Filter>Pliki nagłówkowe\model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

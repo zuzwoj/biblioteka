@@ -15,9 +15,9 @@ void SearchScreen::renderHeader()
 void SearchScreen::renderContents()
 {
 	int i = 0;
-	for (Shelf& s : guiRenderer.library.getShelves())
+	for (auto& s : guiRenderer.library.getShelves())
 	{
-		for (Book& b : s.getBooks())
+		for (Book& b : s.second.getBooks())
 		{
 			switch (guiRenderer.searchParams.searchBy)
 			{

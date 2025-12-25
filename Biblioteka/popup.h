@@ -27,5 +27,5 @@ private:
 public:
 	ConfirmationPopup(std::string message);
 
-	bool confirmed() { return result; }
+	bool confirmed();
 };

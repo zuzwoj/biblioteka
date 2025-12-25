@@ -7,15 +7,14 @@ Shelf::Shelf(std::string name) : name(name), ID(currentID)
 	++currentID;
 }
 
-Shelf::Shelf() : name(""), ID(currentID)
-{ 
-	++currentID;
-}
-
-int Shelf::addBook(BookData bookData)
+void Shelf::addBook(BookData bookData)
 {
 	books.push_back(Book(bookData));
-	return (int)books.size() - 1;
+}
+
+void Shelf::addBook(Book& book)
+{
+	books.push_back(book);
 }
 
 void Shelf::removeBook(Book& book)
@@ -23,7 +22,7 @@ void Shelf::removeBook(Book& book)
 	books.erase(std::remove(books.begin(), books.end(), book), books.end());
 }
 
-std::vector<Book>& Shelf::getBooks()
+std::list<Book>& Shelf::getBooks()
 {
 	return books;
 }

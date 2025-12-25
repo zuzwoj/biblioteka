@@ -25,7 +25,7 @@ void LibraryScreen::renderHeader()
 	if (ImGui::Button(u8"Nowa półka"))
 	{
 		int assignedIndex = guiRenderer.library.addShelf(u8"Nowa półka");
-		guiRenderer.selectedShelf = &guiRenderer.library.getShelves()[assignedIndex];
+		guiRenderer.selectedShelf = &guiRenderer.library.getShelves().at(assignedIndex);
 		guiRenderer.currentMode = SHELF;
 	}
 	ImGui::Columns();
@@ -34,16 +34,16 @@ void LibraryScreen::renderHeader()
 void LibraryScreen::renderContents()
 {
 	int i = 0;
-	for (Shelf& s : guiRenderer.library.getShelves())
+	for (auto& s : guiRenderer.library.getShelves())
 	{
 		ImGui::PushID(i);
 		if (ImGui::Button(u8"Otwórz"))
 		{
-			guiRenderer.selectedShelf = &s;
+			guiRenderer.selectedShelf = &s.second;
 			guiRenderer.currentMode = SHELF;
 		}
 		ImGui::SameLine();
-		ImGui::Text(s.name.c_str());
+		ImGui::Text(s.second.name.c_str());
 		ImGui::PopID();
 		++i;
 		GuiUtils::renderSeparator();

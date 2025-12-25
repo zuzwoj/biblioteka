@@ -2,16 +2,17 @@
 
 int Library::addShelf(std::string name)
 {
-	shelves.push_back(Shelf(name));
+	Shelf newShelf = Shelf(name);
+	shelves.emplace(newShelf.getID(), newShelf);
 	return (int)shelves.size() - 1;
 }
 
 void Library::removeShelf(Shelf& shelf)
 {
-	shelves.erase(std::remove(shelves.begin(), shelves.end(), shelf), shelves.end());
+	shelves.erase(shelf.getID());
 }
 
-std::vector<Shelf>& Library::getShelves()
+std::map<unsigned int, Shelf>& Library::getShelves()
 {
 	return shelves;
 }

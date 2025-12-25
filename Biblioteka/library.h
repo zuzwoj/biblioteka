@@ -1,15 +1,14 @@
 #pragma once
 #include "shelf.h"
-#include <vector>
+#include <map>
 #include <string>
 
 class Library
 {
 private:
-	std::vector<Shelf> shelves = std::vector<Shelf>();
+	std::map<unsigned int, Shelf> shelves = std::map<unsigned int, Shelf>();
 
 public:
 	int addShelf(std::string name);
 	void removeShelf(Shelf& shelf);
-	std::vector<Shelf>& getShelves();
-};
+	std::map<unsigned int, Shelf>& getShelves();};

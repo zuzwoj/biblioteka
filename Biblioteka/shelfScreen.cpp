@@ -18,8 +18,8 @@ void ShelfScreen::renderHeader()
 	ImGui::SameLine();
 	if (ImGui::Button(u8"Nowa książka"))
 	{
-		int assignedIndex = guiRenderer.selectedShelf->addBook(BookData());
-		guiRenderer.selectedBook = &guiRenderer.selectedShelf->getBooks()[assignedIndex];
+		guiRenderer.selectedShelf->addBook(BookData());
+		guiRenderer.selectedBook = &guiRenderer.selectedShelf->getBooks().back();
 		guiRenderer.currentMode = BOOK;
 	}
 	ImGui::SameLine();
@@ -32,11 +32,16 @@ void ShelfScreen::renderHeader()
 	{
 		guiRenderer.currentMode = LIBRARY;
 		guiRenderer.library.removeShelf(*guiRenderer.selectedShelf);
+		guiRenderer.selectedShelf = nullptr;
 	}
 }
 
 void ShelfScreen::renderContents()
 {
+	if (guiRenderer.selectedShelf == nullptr)
+	{
+		return;
+	}
 	int i = 0;
 	for (Book& b : guiRenderer.selectedShelf->getBooks())
 	{
