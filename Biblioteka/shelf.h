@@ -11,7 +11,7 @@ private:
 public:
 	std::string name;
 
-	void addBook(BookData bookData);
+	int addBook(BookData bookData);
 	void removeBook(Book& book);
 	std::vector<Book>& getBooks();
 

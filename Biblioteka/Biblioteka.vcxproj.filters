@@ -22,6 +22,12 @@
     <Filter Include="Pliki źródłowe\gui\imgui">
       <UniqueIdentifier>{b4ce7072-6ce6-42f3-ae06-170516d5a631}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\gui\screen">
+      <UniqueIdentifier>{4030e3b8-eac4-4efa-b61e-432bdfd1aa98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\gui\popup">
+      <UniqueIdentifier>{5b2c6b61-fb30-46c5-85af-725a4c4e2c51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -69,20 +75,29 @@
     <ClCompile Include="guiRenderer.cpp">
       <Filter>Pliki źródłowe\gui</Filter>
     </ClCompile>
-    <ClCompile Include="screen.cpp">
-      <Filter>Pliki źródłowe\gui</Filter>
-    </ClCompile>
-    <ClCompile Include="libraryScreen.cpp">
-      <Filter>Pliki źródłowe\gui</Filter>
-    </ClCompile>
-    <ClCompile Include="shelfScreen.cpp">
+    <ClCompile Include="guiUtils.cpp">
       <Filter>Pliki źródłowe\gui</Filter>
     </ClCompile>
     <ClCompile Include="bookScreen.cpp">
-      <Filter>Pliki źródłowe\gui</Filter>
+      <Filter>Pliki źródłowe\gui\screen</Filter>
     </ClCompile>
-    <ClCompile Include="guiUtils.cpp">
-      <Filter>Pliki źródłowe\gui</Filter>
+    <ClCompile Include="libraryScreen.cpp">
+      <Filter>Pliki źródłowe\gui\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="screen.cpp">
+      <Filter>Pliki źródłowe\gui\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="shelfScreen.cpp">
+      <Filter>Pliki źródłowe\gui\screen</Filter>
+    </ClCompile>
+    <ClCompile Include="popup.cpp">
+      <Filter>Pliki źródłowe\gui\popup</Filter>
+    </ClCompile>
+    <ClCompile Include="confirmationPopup.cpp">
+      <Filter>Pliki źródłowe\gui\popup</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\imgui\misc\cpp\imgui_stdlib.cpp">
+      <Filter>Pliki źródłowe\gui\imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="book.h">
       <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="popup.h">
+      <Filter>Pliki nagłówkowe\gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

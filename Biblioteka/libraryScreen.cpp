@@ -9,7 +9,9 @@ void LibraryScreen::renderHeader()
 {
 	if (ImGui::Button(u8"Nowa półka"))
 	{
-		guiRenderer.library.addShelf(u8"Nowa półka");
+		int assignedIndex = guiRenderer.library.addShelf(u8"Nowa półka");
+		guiRenderer.selectedShelf = &guiRenderer.library.getShelves()[assignedIndex];
+		guiRenderer.currentMode = SHELF;
 	}
 }
 

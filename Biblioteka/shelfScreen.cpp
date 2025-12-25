@@ -1,30 +1,37 @@
 ﻿#include "screen.h"
 #include "guiRenderer.h"
 #include "guiUtils.h"
+#include "imgui_stdlib.h"
 
-ShelfScreen::ShelfScreen(GuiRenderer& guiRenderer) : Screen(guiRenderer, u8"Zawartość półki") {}
+ShelfScreen::ShelfScreen(GuiRenderer& guiRenderer) 
+	: popup(ConfirmationPopup(u8"Czy na pewno chcesz usunąć tę półkę?")),
+	Screen(guiRenderer, u8"Zawartość półki") {}
 
 void ShelfScreen::renderHeader()
 {
-	char* shelfName = (char*)guiRenderer.selectedShelf->name.c_str();
 	if (ImGui::Button(u8"Powrót"))
 	{
 		guiRenderer.currentMode = LIBRARY;
 	}
 	ImGui::SameLine();
-	if (ImGui::InputText("##shelfName", shelfName, 100))
-	{
-		guiRenderer.selectedShelf->name = shelfName;
-	}
+	ImGui::InputText("##shelfName", &guiRenderer.selectedShelf->name);
 	ImGui::SameLine();
 	if (ImGui::Button(u8"Nowa książka"))
 	{
-		guiRenderer.selectedShelf->addBook(BookData());
+		int assignedIndex = guiRenderer.selectedShelf->addBook(BookData());
+		guiRenderer.selectedBook = &guiRenderer.selectedShelf->getBooks()[assignedIndex];
+		guiRenderer.currentMode = BOOK;
 	}
 	ImGui::SameLine();
 	if (ImGui::Button(u8"Usuń półkę"))
 	{
-
+		ImGui::OpenPopup(popup.getName());
+	}
+	popup.render();
+	if (popup.confirmed())
+	{
+		guiRenderer.currentMode = LIBRARY;
+		guiRenderer.library.removeShelf(*guiRenderer.selectedShelf);
 	}
 }
 

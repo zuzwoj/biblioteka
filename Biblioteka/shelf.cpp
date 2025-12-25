@@ -4,9 +4,10 @@ Shelf::Shelf(std::string name) : name(name) { }
 
 Shelf::Shelf() : name("") { }
 
-void Shelf::addBook(BookData bookData)
+int Shelf::addBook(BookData bookData)
 {
 	books.push_back(Book(bookData));
+	return books.size() - 1;
 }
 
 void Shelf::removeBook(Book& book)

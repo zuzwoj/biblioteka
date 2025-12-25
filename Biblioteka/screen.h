@@ -1,6 +1,7 @@
 #pragma once
 #include "imgui.h"
 #include <string>
+#include "popup.h"
 
 class GuiRenderer;
 
@@ -32,6 +33,8 @@ public:
 class ShelfScreen : public Screen
 {
 private:
+	ConfirmationPopup popup;
+
 	void renderHeader() override;
 	void renderContents() override;
 
@@ -42,6 +45,8 @@ public:
 class BookScreen : public Screen
 {
 private:
+	ConfirmationPopup popup;
+
 	void renderHeader() override;
 	void renderContents() override;
 

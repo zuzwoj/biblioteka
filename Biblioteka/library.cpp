@@ -1,8 +1,9 @@
 #include "library.h"
 
-void Library::addShelf(std::string name)
+int Library::addShelf(std::string name)
 {
 	shelves.push_back(Shelf(name));
+	return shelves.size() - 1;
 }
 
 void Library::removeShelf(Shelf& shelf)

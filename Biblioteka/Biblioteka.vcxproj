@@ -27,15 +27,18 @@
     <ClCompile Include="..\..\..\..\..\..\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\..\..\..\..\..\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\..\..\..\..\..\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\..\..\..\..\imgui\misc\cpp\imgui_stdlib.cpp" />
     <ClCompile Include="application.cpp" />
     <ClCompile Include="book.cpp" />
     <ClCompile Include="bookData.cpp" />
     <ClCompile Include="bookScreen.cpp" />
+    <ClCompile Include="confirmationPopup.cpp" />
     <ClCompile Include="guiRenderer.cpp" />
     <ClCompile Include="guiUtils.cpp" />
     <ClCompile Include="library.cpp" />
     <ClCompile Include="libraryScreen.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="popup.cpp" />
     <ClCompile Include="screen.cpp" />
     <ClCompile Include="shelf.cpp" />
     <ClCompile Include="shelfScreen.cpp" />
@@ -46,6 +49,7 @@
     <ClInclude Include="guiRenderer.h" />
     <ClInclude Include="guiUtils.h" />
     <ClInclude Include="library.h" />
+    <ClInclude Include="popup.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="shelf.h" />
   </ItemGroup>
@@ -139,7 +143,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\GLWF\include;C:\imgui;C:\imgui\backends;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GLWF\include;C:\imgui;C:\imgui\backends;C:\imgui\misc\cpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
