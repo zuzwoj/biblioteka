@@ -2,6 +2,14 @@
 
 unsigned int Book::currentID = 0;
 
+Book::Book(BookData bookData, unsigned int ID) : bookData(bookData), ID(ID)
+{
+	if (ID >= currentID)
+	{
+		currentID = ID + 1;
+	}
+}
+
 Book::Book(BookData bookData) : bookData(bookData), ID(currentID)
 {
 	++currentID;

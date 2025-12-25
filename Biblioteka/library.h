@@ -9,6 +9,7 @@ private:
 	std::map<unsigned int, Shelf> shelves = std::map<unsigned int, Shelf>();
 
 public:
-	int addShelf(std::string name);
+	unsigned int addShelf(std::string name);
+	void addShelf(Shelf& shelf);
 	void removeShelf(Shelf& shelf);
 	std::map<unsigned int, Shelf>& getShelves();};

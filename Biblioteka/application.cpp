@@ -35,7 +35,7 @@ bool Application::initialize()
     ImGui::StyleColorsLight();
 
     library = new Library();
-    initializeDummyLibrary();
+    fileManager.loadLibraryFromFile(*library);
     guiRenderer = new GuiRenderer(*library);
 
     return true;

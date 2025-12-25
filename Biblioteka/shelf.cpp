@@ -7,6 +7,14 @@ Shelf::Shelf(std::string name) : name(name), ID(currentID)
 	++currentID;
 }
 
+Shelf::Shelf(std::string name, unsigned int ID) : name(name), ID(ID)
+{
+	if (ID >= currentID)
+	{
+		currentID = ID + 1;
+	}
+}
+
 void Shelf::addBook(BookData bookData)
 {
 	books.push_back(Book(bookData));

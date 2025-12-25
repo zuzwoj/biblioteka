@@ -30,6 +30,7 @@ private:
 public:
 	BookData bookData;
 
+	Book(BookData bookData, unsigned int ID);
 	Book(BookData bookData);
 	Book();
 

@@ -6,6 +6,7 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include "guiRenderer.h"
+#include "fileManager.h"
 
 class Application
 {
@@ -17,6 +18,7 @@ private:
 	ImGuiIO* io = nullptr;
 	GuiRenderer* guiRenderer;
 	Library* library;
+	FileManager fileManager = FileManager();
 
 	void initializeDummyLibrary();
 

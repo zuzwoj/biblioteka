@@ -1,10 +1,15 @@
 #include "library.h"
 
-int Library::addShelf(std::string name)
+int unsigned Library::addShelf(std::string name)
 {
 	Shelf newShelf = Shelf(name);
 	shelves.emplace(newShelf.getID(), newShelf);
-	return (int)shelves.size() - 1;
+	return newShelf.getID();
+}
+
+void Library::addShelf(Shelf& shelf)
+{
+	shelves.emplace(shelf.getID(), shelf);
 }
 
 void Library::removeShelf(Shelf& shelf)

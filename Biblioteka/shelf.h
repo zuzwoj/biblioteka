@@ -14,6 +14,7 @@ public:
 	std::string name;
 
 	Shelf(std::string name);
+	Shelf(std::string name, unsigned int ID);
 
 	void addBook(BookData bookData);
 	void addBook(Book& book);
