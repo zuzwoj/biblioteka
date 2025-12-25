@@ -6,11 +6,19 @@ BookScreen::BookScreen(GuiRenderer& guiRenderer) :
 	popup(ConfirmationPopup(u8"Czy na pewno chcesz usunąć tę książkę?")),
 	Screen(guiRenderer, u8"Szczegóły książki") { }
 
+void BookScreen::renderRowHeader(const char* headerName)
+{
+	ImGui::TableNextRow();
+	ImGui::TableSetColumnIndex(0);
+	ImGui::Text(headerName);
+	ImGui::TableSetColumnIndex(1);
+}
+
 void BookScreen::renderHeader()
 {
 	if (ImGui::Button(u8"Powrót"))
 	{
-		guiRenderer.currentMode = SHELF;
+		guiRenderer.currentMode = (guiRenderer.selectedShelf == nullptr) ? SEARCH : SHELF;
 	}
 	ImGui::SameLine();
 	if (ImGui::Button(u8"Usuń książkę"))
@@ -29,34 +37,27 @@ void BookScreen::renderContents()
 {
 	if (ImGui::BeginTable("##bookDetails", 2, ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg))
 	{
-		ImGui::TableNextRow();
-		ImGui::TableSetColumnIndex(0);
-		ImGui::Text(u8"Tytuł");
-		ImGui::TableSetColumnIndex(1);
+		renderRowHeader(u8"Tytuł");
 		ImGui::InputText("##title", &guiRenderer.selectedBook->bookData.title);
 
-		ImGui::TableNextRow();
-		ImGui::TableSetColumnIndex(0);
-		ImGui::Text("Autor");
-		ImGui::TableSetColumnIndex(1);
+		renderRowHeader("Autor");
 		ImGui::InputText("##author", &guiRenderer.selectedBook->bookData.author);
 
-		int year = (int)guiRenderer.selectedBook->bookData.year;
-		ImGui::TableNextRow();
-		ImGui::TableSetColumnIndex(0);
-		ImGui::Text("Rok wydania");
-		ImGui::TableSetColumnIndex(1);
-		if (ImGui::InputInt("##year", &year))
-		{
-			if (year < 0)
-			{
-				year = 0;
-			}
-			guiRenderer.selectedBook->bookData.year = year;
-		}
+		renderRowHeader("Rok wydania");
+		ImGui::InputScalar("##year", ImGuiDataType_U32, &guiRenderer.selectedBook->bookData.year);
+
+		renderRowHeader("Liczba stron");
+		ImGui::InputScalar("##pages", ImGuiDataType_U32, &guiRenderer.selectedBook->bookData.pages);
+
+		renderRowHeader(u8"Numer regału");
+		ImGui::InputScalar("##shelf", ImGuiDataType_U32, &guiRenderer.selectedBook->bookData.shelf);
+
+		renderRowHeader("Przeczytana");
+		ImGui::Checkbox("##read", &guiRenderer.selectedBook->bookData.read);
 
 		ImGui::EndTable();
 	}
+
 	ImGui::InputTextMultiline(
 		"##note", 
 		&guiRenderer.selectedBook->bookData.note, 

@@ -6,17 +6,27 @@ struct BookData
 	std::string title;
 	std::string author;
 	unsigned int year;
+	unsigned int pages;
+	unsigned int shelf;
+	bool read;
 	std::string note;
 
-	BookData(std::string title, std::string author, unsigned int year, std::string note);
+	BookData(
+		std::string title, 
+		std::string author, 
+		unsigned int year, 
+		unsigned int pages, 
+		unsigned int shelf, 
+		std::string note);
 	BookData();
-
-	friend bool operator== (const BookData& b1, const BookData& b2);
-	friend bool operator!= (const BookData& b1, const BookData& b2);
 };
 
 class Book
 {
+private:
+	static unsigned int currentID;
+	unsigned int ID;
+
 public:
 	BookData bookData;
 

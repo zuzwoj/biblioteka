@@ -99,6 +99,9 @@
     <ClCompile Include="..\..\..\..\..\imgui\misc\cpp\imgui_stdlib.cpp">
       <Filter>Pliki źródłowe\gui\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="searchScreen.cpp">
+      <Filter>Pliki źródłowe\gui\screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="library.h">
@@ -124,6 +127,12 @@
     </ClInclude>
     <ClInclude Include="popup.h">
       <Filter>Pliki nagłówkowe\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

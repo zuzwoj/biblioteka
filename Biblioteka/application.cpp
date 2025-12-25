@@ -63,12 +63,36 @@ void Application::cleanup()
 
 void Application::initializeDummyLibrary()
 {
-    library->addShelf("Polskie");
-    library->addShelf("Zagraniczne");
-    BookData b1 = BookData("Lalka", u8"Bolesław Prus", 1889, u8"Powieść społeczno-obyczajowa publikowana w dzienniku Kurier Codzienny, wydana w Warszawie w wydawnictwie Gebethner i Wolff. Uznawana jest za jedną z najlepszych polskich powieści.");
-    BookData b2 = BookData("Wizja Lokalna", u8"Stanisław Lem", 1982, u8"Powieść opowiada o podróży Ijona Tichego na odległą planetę, Encję (co jest łacińskim tłumaczeniem nazwy własnej owego świata), w celu zbadania tamtejszej cywilizacji.");
-    BookData b3 = BookData(u8"I nie było już nikogo", "Agata Christie", 1939, u8"Tajemniczy pan Owen zaprasza na odciętą od świata wyspę dziesięciu gości, których pozornie nic ze sobą nie łączy. W dniu przyjazdu okazuje się, że gospodarz nie pojawi się na wyspie.");
-    BookData b4 = BookData("Proces", "Franz Kafka", 1925, u8"Głównym bohaterem powieści jest Józef K., kawaler, prokurent bankowy, mieszkający w mieście, określanym jako stolica. Pewnego dnia budzi się w swoim mieszkaniu i zostaje zaskoczony najściem urzędników, którzy oświadczają mu, że zostaje aresztowany, mimo iż nic złego nie popełnił.");
+    library->addShelf("1");
+    library->addShelf("2");
+    BookData b1 = BookData(
+        "Lalka", 
+        u8"Bolesław Prus", 
+        1889, 
+        480,
+        1,
+        u8"Powieść społeczno-obyczajowa publikowana w dzienniku Kurier Codzienny, wydana w Warszawie w wydawnictwie Gebethner i Wolff. Uznawana jest za jedną z najlepszych polskich powieści.");
+    BookData b2 = BookData(
+        "Wizja Lokalna", 
+        u8"Stanisław Lem", 
+        1982, 
+        476, 
+        1, 
+        u8"Powieść opowiada o podróży Ijona Tichego na odległą planetę, Encję (co jest łacińskim tłumaczeniem nazwy własnej owego świata), w celu zbadania tamtejszej cywilizacji.");
+    BookData b3 = BookData(
+        u8"I nie było już nikogo", 
+        "Agata Christie", 
+        1939,
+        224,
+        2,
+        u8"Tajemniczy pan Owen zaprasza na odciętą od świata wyspę dziesięciu gości, których pozornie nic ze sobą nie łączy. W dniu przyjazdu okazuje się, że gospodarz nie pojawi się na wyspie.");
+    BookData b4 = BookData(
+        "Proces", 
+        "Franz Kafka", 
+        1925, 
+        208,
+        2,
+        u8"Głównym bohaterem powieści jest Józef K., kawaler, prokurent bankowy, mieszkający w mieście, określanym jako stolica. Pewnego dnia budzi się w swoim mieszkaniu i zostaje zaskoczony najściem urzędników, którzy oświadczają mu, że zostaje aresztowany, mimo iż nic złego nie popełnił.");
     std::vector<Shelf>& sfs = library->getShelves();
     sfs[0].addBook(b1);
     sfs[0].addBook(b2);

@@ -6,6 +6,8 @@
 class Shelf
 {
 private:
+	static unsigned int currentID;
+	unsigned int ID;
 	std::vector<Book> books = std::vector<Book>();
 
 public:

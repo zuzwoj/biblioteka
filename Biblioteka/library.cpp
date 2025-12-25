@@ -3,7 +3,7 @@
 int Library::addShelf(std::string name)
 {
 	shelves.push_back(Shelf(name));
-	return shelves.size() - 1;
+	return (int)shelves.size() - 1;
 }
 
 void Library::removeShelf(Shelf& shelf)

@@ -40,6 +40,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="popup.cpp" />
     <ClCompile Include="screen.cpp" />
+    <ClCompile Include="searchScreen.cpp" />
     <ClCompile Include="shelf.cpp" />
     <ClCompile Include="shelfScreen.cpp" />
   </ItemGroup>
@@ -50,6 +51,8 @@
     <ClInclude Include="guiUtils.h" />
     <ClInclude Include="library.h" />
     <ClInclude Include="popup.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="screen.h" />
     <ClInclude Include="shelf.h" />
   </ItemGroup>

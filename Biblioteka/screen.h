@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "imgui.h"
 #include <string>
 #include "popup.h"
@@ -47,9 +47,20 @@ class BookScreen : public Screen
 private:
 	ConfirmationPopup popup;
 
+	void renderRowHeader(const char* headerName);
 	void renderHeader() override;
 	void renderContents() override;
 
 public:
 	BookScreen(GuiRenderer& guiRenderer);
+};
+
+class SearchScreen : public Screen
+{
+private:
+	void renderHeader() override;
+	void renderContents() override;
+
+public:
+	SearchScreen(GuiRenderer& guiRenderer);
 };

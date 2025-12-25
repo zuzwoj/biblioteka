@@ -1,13 +1,21 @@
 #include "shelf.h"
 
-Shelf::Shelf(std::string name) : name(name) { }
+unsigned int Shelf::currentID = 0;
 
-Shelf::Shelf() : name("") { }
+Shelf::Shelf(std::string name) : name(name), ID(currentID)
+{ 
+	++currentID;
+}
+
+Shelf::Shelf() : name(""), ID(currentID)
+{ 
+	++currentID;
+}
 
 int Shelf::addBook(BookData bookData)
 {
 	books.push_back(Book(bookData));
-	return books.size() - 1;
+	return (int)books.size() - 1;
 }
 
 void Shelf::removeBook(Book& book)
@@ -22,7 +30,7 @@ std::vector<Book>& Shelf::getBooks()
 
 bool operator== (const Shelf& s1, const Shelf& s2)
 {
-	return s1.name == s2.name;
+	return s1.ID == s2.ID;
 }
 
 bool operator!= (const Shelf& s1, const Shelf& s2)

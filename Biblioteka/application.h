@@ -10,7 +10,7 @@
 class Application
 {
 private:
-	const char* FONT_PATH = "C:/Windows/Fonts/courbd.ttf";
+	const char* FONT_PATH = "C:/Windows/Fonts/arial.ttf";
 	const float FONT_SIZE = 18.0f;
 
 	GLFWwindow* window;
