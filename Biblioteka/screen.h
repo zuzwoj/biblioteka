@@ -1,0 +1,50 @@
+#pragma once
+#include "imgui.h"
+#include <string>
+
+class GuiRenderer;
+
+class Screen
+{
+protected:
+	GuiRenderer& guiRenderer;
+	std::string name;
+
+	virtual void renderHeader() = 0;
+	virtual void renderContents() = 0;
+
+public:
+	Screen(GuiRenderer& guiRenderer, std::string name);
+
+	void render();
+};
+
+class LibraryScreen : public Screen
+{
+private:
+	void renderHeader() override;
+	void renderContents() override;
+
+public:
+	LibraryScreen(GuiRenderer& guiRenderer);
+};
+
+class ShelfScreen : public Screen
+{
+private:
+	void renderHeader() override;
+	void renderContents() override;
+
+public:
+	ShelfScreen(GuiRenderer& guiRenderer);
+};
+
+class BookScreen : public Screen
+{
+private:
+	void renderHeader() override;
+	void renderContents() override;
+
+public:
+	BookScreen(GuiRenderer& guiRenderer);
+};

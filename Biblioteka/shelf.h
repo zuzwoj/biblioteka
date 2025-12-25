@@ -17,4 +17,7 @@ public:
 
 	Shelf(std::string name);
 	Shelf();
+
+	friend bool operator== (const Shelf& s1, const Shelf& s2);
+	friend bool operator!= (const Shelf& s1, const Shelf& s2);
 };

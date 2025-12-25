@@ -18,7 +18,7 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-    <ItemGroup>
+  <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\GLWF\glad.c" />
     <ClCompile Include="..\..\..\..\..\..\imgui\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="..\..\..\..\..\..\imgui\backends\imgui_impl_opengl3.cpp" />
@@ -30,16 +30,23 @@
     <ClCompile Include="application.cpp" />
     <ClCompile Include="book.cpp" />
     <ClCompile Include="bookData.cpp" />
+    <ClCompile Include="bookScreen.cpp" />
     <ClCompile Include="guiRenderer.cpp" />
+    <ClCompile Include="guiUtils.cpp" />
     <ClCompile Include="library.cpp" />
+    <ClCompile Include="libraryScreen.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="screen.cpp" />
     <ClCompile Include="shelf.cpp" />
+    <ClCompile Include="shelfScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application.h" />
     <ClInclude Include="book.h" />
     <ClInclude Include="guiRenderer.h" />
+    <ClInclude Include="guiUtils.h" />
     <ClInclude Include="library.h" />
+    <ClInclude Include="screen.h" />
     <ClInclude Include="shelf.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

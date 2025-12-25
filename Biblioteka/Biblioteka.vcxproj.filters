@@ -13,7 +13,13 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Pliki źródłowe\imgui">
+    <Filter Include="Pliki nagłówkowe\gui">
+      <UniqueIdentifier>{e65380fc-e04d-4f15-9120-3bb0b14f1673}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\gui">
+      <UniqueIdentifier>{b118773d-2e3a-40d2-b4cd-98bf038801f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\gui\imgui">
       <UniqueIdentifier>{b4ce7072-6ce6-42f3-ae06-170516d5a631}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -30,38 +36,53 @@
     <ClCompile Include="book.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="guiRenderer.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="bookData.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\imgui\imgui.cpp">
-      <Filter>Pliki źródłowe\imgui</Filter>
+      <Filter>Pliki źródłowe\gui\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\imgui\imgui_demo.cpp">
-      <Filter>Pliki źródłowe\imgui</Filter>
+      <Filter>Pliki źródłowe\gui\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\imgui\imgui_draw.cpp">
-      <Filter>Pliki źródłowe\imgui</Filter>
+      <Filter>Pliki źródłowe\gui\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\imgui\imgui_tables.cpp">
-      <Filter>Pliki źródłowe\imgui</Filter>
+      <Filter>Pliki źródłowe\gui\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\imgui\imgui_widgets.cpp">
-      <Filter>Pliki źródłowe\imgui</Filter>
+      <Filter>Pliki źródłowe\gui\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\imgui\backends\imgui_impl_glfw.cpp">
-      <Filter>Pliki źródłowe\imgui</Filter>
+      <Filter>Pliki źródłowe\gui\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\imgui\backends\imgui_impl_opengl3.cpp">
-      <Filter>Pliki źródłowe\imgui</Filter>
+      <Filter>Pliki źródłowe\gui\imgui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\..\..\GLWF\glad.c">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="application.cpp">
       <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="guiRenderer.cpp">
+      <Filter>Pliki źródłowe\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="screen.cpp">
+      <Filter>Pliki źródłowe\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="libraryScreen.cpp">
+      <Filter>Pliki źródłowe\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="shelfScreen.cpp">
+      <Filter>Pliki źródłowe\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="bookScreen.cpp">
+      <Filter>Pliki źródłowe\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="guiUtils.cpp">
+      <Filter>Pliki źródłowe\gui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,13 +92,19 @@
     <ClInclude Include="shelf.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="book.h">
+    <ClInclude Include="application.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="guiRenderer.h">
-      <Filter>Pliki nagłówkowe</Filter>
+      <Filter>Pliki nagłówkowe\gui</Filter>
     </ClInclude>
-    <ClInclude Include="application.h">
+    <ClInclude Include="screen.h">
+      <Filter>Pliki nagłówkowe\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="guiUtils.h">
+      <Filter>Pliki nagłówkowe\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="book.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
