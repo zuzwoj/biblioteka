@@ -18,7 +18,7 @@ private:
 	ImGuiIO* io = nullptr;
 	GuiRenderer* guiRenderer;
 	Library* library;
-	FileManager fileManager = FileManager();
+	FileManager* fileManager;
 
 	void initializeDummyLibrary();
 

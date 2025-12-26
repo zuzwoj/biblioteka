@@ -9,25 +9,27 @@ using json = nlohmann::json;
 class FileManager
 {
 private:
+	Library& library;
+
 	std::string rootDirectory;
 	std::string shelvesFile;
 	std::string booksDirectory;
+	std::string discardedDirectory;
 	std::string booksFiles;
 
-	void loadShelvesFromFile(Library& library);
-	void loadBooksFromFile(Library& library);
-	void loadBookFromFile(Library& library, json j, int bookId);
+	void loadShelvesFromFile();
+	void loadBooksFromFile();
+	void loadBookFromFile(json j, int bookId);
+
+	int getBookId(std::string filename);
 
 public:
-	FileManager();
+	FileManager(Library& library);
 
-	void loadLibraryFromFile(Library& library);
+	void loadLibraryFromFile();
 
-	void createShelf(Shelf& shelf);
-	void deleteShelf(Shelf& shelf);
-	void updateShelf(Shelf& shelf);
+	void persistShelves();
 
-	void createBook(Book& book);
+	void persistBook(Book& book);
 	void deleteBook(Book& book);
-	void updateBook(Book& book);
 };

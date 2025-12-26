@@ -5,6 +5,7 @@
 #include "screen.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
+#include "fileManager.h"
 
 enum GuiMode
 {
@@ -35,13 +36,14 @@ private:
 
 
 public:
-	GuiRenderer(Library& library);
+	GuiRenderer(Library& library, FileManager& fileManager);
 	~GuiRenderer();
 
 	GuiMode currentMode = GuiMode::LIBRARY;
 	SearchParams searchParams;
 
 	Library& library;
+	FileManager& fileManager;
 	Shelf* selectedShelf = nullptr;
 	Book* selectedBook = nullptr;
 

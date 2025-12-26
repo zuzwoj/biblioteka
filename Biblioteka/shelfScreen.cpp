@@ -12,15 +12,19 @@ void ShelfScreen::renderHeader()
 	if (ImGui::Button(u8"Powrót"))
 	{
 		guiRenderer.currentMode = LIBRARY;
+		guiRenderer.fileManager.persistShelves();
 	}
 	ImGui::SameLine();
 	ImGui::InputText("##shelfName", &guiRenderer.selectedShelf->name);
 	ImGui::SameLine();
 	if (ImGui::Button(u8"Nowa książka"))
 	{
-		guiRenderer.selectedShelf->addBook(BookData());
-		guiRenderer.selectedBook = &guiRenderer.selectedShelf->getBooks().back();
 		guiRenderer.currentMode = BOOK;
+		guiRenderer.fileManager.persistShelves();
+		guiRenderer.selectedShelf->addBook(BookData());
+		Book& newBook = guiRenderer.selectedShelf->getBooks().back();
+		guiRenderer.selectedBook = &newBook;
+		guiRenderer.fileManager.persistBook(newBook);
 	}
 	ImGui::SameLine();
 	if (ImGui::Button(u8"Usuń półkę"))
@@ -31,8 +35,13 @@ void ShelfScreen::renderHeader()
 	if (popup.confirmed())
 	{
 		guiRenderer.currentMode = LIBRARY;
+		for (auto& book : guiRenderer.selectedShelf->getBooks())
+		{
+			guiRenderer.fileManager.deleteBook(book);
+		}
 		guiRenderer.library.removeShelf(*guiRenderer.selectedShelf);
 		guiRenderer.selectedShelf = nullptr;
+		guiRenderer.fileManager.persistShelves();
 	}
 }
 

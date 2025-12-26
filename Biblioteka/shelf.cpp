@@ -17,11 +17,13 @@ Shelf::Shelf(std::string name, unsigned int ID) : name(name), ID(ID)
 
 void Shelf::addBook(BookData bookData)
 {
+	bookData.shelf = ID;
 	books.push_back(Book(bookData));
 }
 
 void Shelf::addBook(Book& book)
 {
+	book.bookData.shelf = ID;
 	books.push_back(book);
 }
 

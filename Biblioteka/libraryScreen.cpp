@@ -27,6 +27,7 @@ void LibraryScreen::renderHeader()
 		int assignedIndex = guiRenderer.library.addShelf(u8"Nowa półka");
 		guiRenderer.selectedShelf = &guiRenderer.library.getShelves().at(assignedIndex);
 		guiRenderer.currentMode = SHELF;
+		guiRenderer.fileManager.persistShelves();
 	}
 	ImGui::Columns();
 }

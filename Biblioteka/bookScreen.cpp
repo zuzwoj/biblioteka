@@ -20,7 +20,15 @@ void BookScreen::renderHeader()
 	if (ImGui::Button(u8"Powrót"))
 	{
 		guiRenderer.currentMode = (guiRenderer.selectedShelf == nullptr) ? SEARCH : SHELF;
+		guiRenderer.fileManager.persistBook(*guiRenderer.selectedBook);
 	}
+	ImGui::SameLine();
+	if (ImGui::Button("Zapisz zmiany"))
+	{
+		guiRenderer.fileManager.persistBook(*guiRenderer.selectedBook);
+	}
+	ImGui::SameLine();
+	ImGui::Dummy(ImVec2(100.0f, 0.0f));
 	ImGui::SameLine();
 	if (ImGui::Button(u8"Usuń książkę"))
 	{
@@ -31,6 +39,7 @@ void BookScreen::renderHeader()
 	{
 		guiRenderer.currentMode = SHELF;
 		guiRenderer.selectedShelf->removeBook(*guiRenderer.selectedBook);
+		guiRenderer.fileManager.deleteBook(*guiRenderer.selectedBook);
 		guiRenderer.selectedBook = nullptr;
 	}
 }

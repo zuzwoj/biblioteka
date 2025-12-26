@@ -35,8 +35,9 @@ bool Application::initialize()
     ImGui::StyleColorsLight();
 
     library = new Library();
-    fileManager.loadLibraryFromFile(*library);
-    guiRenderer = new GuiRenderer(*library);
+    fileManager = new FileManager(*library);
+    fileManager->loadLibraryFromFile();
+    guiRenderer = new GuiRenderer(*library, *fileManager);
 
     return true;
 }
@@ -53,6 +54,7 @@ void Application::run()
 
 void Application::cleanup()
 {
+    delete fileManager;
     delete guiRenderer;
     delete library;
     ImGui_ImplOpenGL3_Shutdown();

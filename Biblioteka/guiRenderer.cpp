@@ -1,6 +1,7 @@
 ﻿#include "guiRenderer.h"
 
-GuiRenderer::GuiRenderer(Library& library) : library(library) {}
+GuiRenderer::GuiRenderer(Library& library, FileManager& fileManager) : 
+	library(library), fileManager(fileManager) { }
 
 void GuiRenderer::render()
 {
